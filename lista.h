@@ -9,7 +9,7 @@ typedef unsigned int t_telefone
 
 typedef struct t_elemento {
 	t_chave nome[10];
-  t_telefone telefone;
+  	t_telefone telefone;
 } t_elemento;
 
 typedef struct t_no *t_apontador;
