@@ -10,6 +10,7 @@ int main(){
     char op_entrada = -1; //inicializado com operacao invalida
     int i = 0;
     while(i < 109 && op_entrada != 0){
+        scanf("%c", &op_entrada);
         switch (op_entrada){
             case 'I': //inserir novo contato
             
