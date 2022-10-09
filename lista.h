@@ -27,9 +27,5 @@ t_elemento pesquisar(t_lista *lista, t_chave chave);
 int inserir(t_lista *lista, t_elemento elemento);
 int remover(t_lista *lista, t_chave chave);
 int alterar(t_lista *lista, t_telefone novo_telefone);
-/*
-.
-.
-.
-*/
+
 #endif
