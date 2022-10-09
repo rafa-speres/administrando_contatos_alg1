@@ -8,18 +8,17 @@ void criar(t_lista *lista){
     lista->primeiro = NULL;
 }
 
-static t_apontador pesquisa_pos(t_lista *lista, t_chave chave) {
+t_apontador pesquisa_ponteiro(t_lista *lista, t_chave chave) {
 
 	t_apontador P = lista->primeiro;
 	if(P == NULL)
 		return NULL;
 
 	while(P != NULL) {
-		if (P->elemento.chave == chave)
+		if (P->elemento.nome == chave)
 			return P;
 		P = P->proximo;
 	}
-
 	return NULL;
 
 }
@@ -32,7 +31,7 @@ t_elemento pesquisar(t_lista *lista, t_chave chave){
 int inserir(t_lista *lista, t_elemento elemento){
 	t_apontador novo = (t_apontador) malloc(sizeof(t_no));
 	if (novo == NULL)
-		return 0;
+		return 0; //se memoria cheia
 
 	novo->elemento = elemento;
 	novo->proximo = lista->primeiro;
