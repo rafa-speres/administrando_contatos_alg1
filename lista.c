@@ -2,30 +2,33 @@
 //Rafael Scalon Peres Conti, nUSP: 11871181
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lista.h"
 
 void criar(t_lista *lista){
     lista->primeiro = NULL;
 }
 
-t_apontador pesquisa_ponteiro(t_lista *lista, t_chave chave) {
+t_apontador pesquisa_ponteiro(t_lista *lista, t_chave *chave){
 
 	t_apontador P = lista->primeiro;
-	if(P == NULL)
+	if(P == NULL){
 		return NULL;
-
+	}
+	
 	while(P != NULL) {
-		if (P->elemento.nome == chave)
+		if (!strcmp(P->elemento.nome, chave)){
 			return P;
+		}
 		P = P->proximo;
 	}
 	return NULL;
 
 }
 
-t_elemento pesquisar(t_lista *lista, t_chave chave){
-    	t_apontador P = pesquisa_pos(lista, chave);
-	    return P->elemento;
+t_elemento pesquisar(t_lista *lista, t_chave *chave){
+    t_apontador P = pesquisa_ponteiro(lista, chave);
+	return P->elemento;
 }
 
 int inserir(t_lista *lista, t_elemento elemento){
@@ -39,5 +42,5 @@ int inserir(t_lista *lista, t_elemento elemento){
 
 	return 1;
 }
-int remover(t_lista *lista, t_chave chave);
+int remover(t_lista *lista, t_chave *chave);
 int alterar(t_lista *lista, t_telefone novo_telefone);
