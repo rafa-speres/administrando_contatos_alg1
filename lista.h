@@ -5,7 +5,7 @@
 //MENSAGENS DE RETURN
 
 typedef char t_chave;
-typedef unsigned int t_telefone
+typedef unsigned int t_telefone;
 
 typedef struct t_elemento {
 	t_chave nome[10];
@@ -24,6 +24,7 @@ typedef struct {
 
 void criar(t_lista *lista);
 t_elemento pesquisar(t_lista *lista, t_chave chave);
+t_apontador pesquisa_ponteiro(t_lista *lista, t_chave chave);
 int inserir(t_lista *lista, t_elemento elemento);
 int remover(t_lista *lista, t_chave chave);
 int alterar(t_lista *lista, t_telefone novo_telefone);
