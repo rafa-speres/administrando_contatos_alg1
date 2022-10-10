@@ -1,5 +1,5 @@
 //Administrando contatinhos
-//Rafael Scalon Peres Conti, nUSP: 11871181
+//Rafael Scalon Peres Conti, nUSP: 11871181 - Giancarlo Malfate Caprino, nUSP: 12725025
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +27,12 @@ static t_apontador pesquisa_pos(t_lista *lista, t_chave *chave){
 
 t_elemento pesquisar(t_lista *lista, t_chave *chave){
     t_apontador P = pesquisa_pos(lista, chave);
-	return P->elemento;
+
+	if (P->elemento.nome == NULL)
+    	printf("Operacao Invalida: contatinho nao encontrado\n");
+  	else {
+    	printf("Contatinho encontrado: telefone %u \n", P->elemento.telefone);
+  }
 }
 
 int inserir(t_lista *lista, t_elemento elemento){
@@ -49,7 +54,7 @@ int inserir(t_lista *lista, t_elemento elemento){
 }
 int remover(t_lista *lista, t_chave *chave){
 	t_apontador P = lista->primeiro;
-	if(P==NULL){
+	if(P == NULL){
 		return ELEMENTO_NAO_ENCONTRADO;
 	}
 	
@@ -72,4 +77,11 @@ int remover(t_lista *lista, t_chave *chave){
 	return ELEMENTO_NAO_ENCONTRADO;
 }
 
-int alterar(t_lista *lista, t_chave *chave, t_telefone novo_telefone);
+int alterar(t_lista *lista, t_chave *chave, t_telefone novo_telefone){
+	t_apontador P = pesquisa_pos(lista, chave);
+	if(P == NULL){
+		return ELEMENTO_NAO_ENCONTRADO;
+	} else{
+		P-> elemento.telefone = novo_telefone;
+	}
+}
