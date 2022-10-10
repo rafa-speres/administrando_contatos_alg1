@@ -1,5 +1,5 @@
 //Administrando contatinhos
-//Rafael Scalon Peres Conti, nUSP: 11871181
+//Rafael Scalon Peres Conti, nUSP: 11871181 - Giancarlo Malfate Caprino, nUSP: 12725025
 #ifndef LISTA_H
 #define LISTA_H
 //MENSAGENS DE RETURN
