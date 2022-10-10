@@ -3,6 +3,11 @@
 #ifndef LISTA_H
 #define LISTA_H
 //MENSAGENS DE RETURN
+#define ELEMENTO_NAO_ENCONTRADO -2;
+#define MEMORIA_CHEIA -1;
+#define ELEMENTO_REPETIDO 0;
+#define SUCESSO 1;
+
 
 typedef char t_chave;
 typedef unsigned int t_telefone;
@@ -27,6 +32,6 @@ t_elemento pesquisar(t_lista *lista, t_chave *chave);
 t_apontador pesquisa_ponteiro(t_lista *lista, t_chave *chave);
 int inserir(t_lista *lista, t_elemento elemento);
 int remover(t_lista *lista, t_chave *chave);
-int alterar(t_lista *lista, t_telefone novo_telefone);
+int alterar(t_lista *lista, t_chave *chave, t_telefone novo_telefone);
 
 #endif
