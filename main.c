@@ -22,9 +22,9 @@ int main(){
     unsigned int telefone;
     while(i < 109 && op_entrada != '0'){
         scanf(" %c", &op_entrada);
-        scanf("%s", elemento.nome);
         switch (op_entrada){
             case 'I': //inserir novo contato
+                scanf("%s", elemento.nome);
                 scanf("%u", &elemento.telefone);
                 if(inserir(&lista, elemento) == 0){
                     printf("Contatinho ja inserido\n");
@@ -32,16 +32,19 @@ int main(){
             break;
 
             case 'P': //pesquisar por um contato
+                scanf("%s", elemento.nome);
                 pesquisar(&lista, elemento.nome);
             break;
 
             case 'R': //remover um contato (busca por nome)
+                scanf("%s", elemento.nome);
                 if(remover(&lista, elemento.nome) == -2){
                     printf("Operacao invalida: contatinho nao encontrado\n");
                 }
             break;
 
             case 'A': //alterar um telefone (busca por nome)
+                scanf("%s", elemento.nome);
                 scanf("%u", &elemento.telefone);
                 if(alterar(&lista, elemento.nome, elemento.telefone) == -2){
                     printf("Operacao invalida: contatinho nao encontrado\n");
@@ -49,6 +52,7 @@ int main(){
             break;
 
             case '0': //sair do loop e finalizar o programa
+                liberar(&lista);
             break;
         }
     }
