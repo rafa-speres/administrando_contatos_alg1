@@ -37,5 +37,6 @@ t_apontador pesquisa_ponteiro(t_lista *lista, t_chave *chave);
 int inserir(t_lista *lista, t_elemento elemento);
 int remover(t_lista *lista, t_chave *chave);
 int alterar(t_lista *lista, t_chave *chave, t_telefone novo_telefone);
+void liberar(t_lista *lista);
 
 #endif
