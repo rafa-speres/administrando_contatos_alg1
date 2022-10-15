@@ -33,7 +33,7 @@ t_elemento pesquisar(t_lista *lista, t_chave *chave){
     t_apontador P = pesquisa_pos(lista, chave);
 
 	if (P->elemento.nome == NULL)
-    	printf("Operacao Invalida: contatinho nao encontrado\n");
+    	printf("Contatinho nao encontrado\n");
   	else {
     	printf("Contatinho encontrado: telefone %u \n", P->elemento.telefone);
   }
@@ -88,4 +88,16 @@ int alterar(t_lista *lista, t_chave *chave, t_telefone novo_telefone){
 	} else{
 		P-> elemento.telefone = novo_telefone;
 	}
+}
+
+void liberar(t_lista *lista) {
+    t_apontador P = lista->primeiro;
+
+	t_apontador aux = NULL;
+    while (P!=NULL) {
+        aux = P->proximo;
+        free(P);
+        P = aux;
+    }
+    free(aux);
 }
