@@ -67,7 +67,7 @@ int remover(t_lista *lista, t_chave *chave){
     }
 
     while(P->proximo != NULL){
-	if(strcmp(P->elemento.nome, chave) == 0){
+	if(strcmp(P->proximo->elemento.nome, chave) == 0){
 		t_apontador auxiliar = P->proximo;
 		P->proximo = P->proximo->proximo;
 		free(auxiliar);
