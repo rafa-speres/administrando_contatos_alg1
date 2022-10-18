@@ -20,7 +20,7 @@ int main(){
     int i = 0;
     char nome[10];
     unsigned int telefone;
-    while(i < 109 && op_entrada != '0'){
+    while(i < 1000000000 && op_entrada != '0'){
         scanf(" %c", &op_entrada);
         switch (op_entrada){
             case 'I': //inserir novo contato
