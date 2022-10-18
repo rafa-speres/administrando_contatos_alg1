@@ -5,8 +5,7 @@ OBJECTS = main.o
 run: main
 	./main
 
-all: lista.c lista.h main.c
-	gcc -o main main.c lista.c
+all: main
 
 main: main.o
 	$(CC) -o main main.o $(CFLAGS)
