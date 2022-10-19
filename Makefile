@@ -1,17 +1,11 @@
-CC = gcc
-CFLAGS = -Wall                                 # -Wall: Enables recommended compiler warnings
-OBJECTS = main.o
-
-run: main
-	./main
-
-all: main
-
-main: main.o
-	$(CC) -o main main.o $(CFLAGS)
-
+all: main.o lista.o
+	@gcc main.o lista.o -o main
+	
 main.o: main.c
-	$(CC) -c main.c $(CFLAGS)
-
-clear: 
-	rm $(OBJECTS)
+	@gcc main.c -c
+	
+lista.o: lista.c
+	@gcc lista.c -c
+	
+run:
+	@./main
