@@ -54,6 +54,7 @@ int inserir(t_lista *lista, t_elemento elemento){
 	return ELEMENTO_REPETIDO;
     }
 }
+
 int remover(t_lista *lista, t_chave *chave){
     t_apontador P = lista->primeiro;
     if(P == NULL){
