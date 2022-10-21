@@ -18,15 +18,15 @@ int main(){
     //variavel para receber a operacao e um contador
     char op_entrada;
     int i = 0;
-    char nome[10];
-    unsigned int telefone;
-    while(i < 1000000000 && op_entrada != '0'){
+    
+    while(i < 1000000000 && op_entrada != '0'){ //enquanto a operacao nao for 0 e nao chegar a 10^9 operacoes
         scanf(" %c", &op_entrada);
+        //uso de switch para realizar as operacoes requisitadas
         switch (op_entrada){
             case 'I': //inserir novo contato
                 scanf("%s", elemento.nome);
                 scanf("%u", &elemento.telefone);
-                if(inserir(&lista, elemento) == 0){
+                if(inserir(&lista, elemento) == 0){ // 0 == ELEMENTO_REPETIDO
                     printf("Contatinho ja inserido\n");
                 }
             break;
@@ -36,23 +36,23 @@ int main(){
                 pesquisar(&lista, elemento.nome);
             break;
 
-            case 'R': //remover um contato (busca por nome)
+            case 'R': //remover um contato
                 scanf("%s", elemento.nome);
-                if(remover(&lista, elemento.nome) == -2){
+                if(remover(&lista, elemento.nome) == -2){ //-2 == ELEMENTO_NAO_ENCONTRADO
                     printf("Operacao invalida: contatinho nao encontrado\n");
                 }
             break;
 
-            case 'A': //alterar um telefone (busca por nome)
+            case 'A': //alterar um telefone
                 scanf("%s", elemento.nome);
                 scanf("%u", &elemento.telefone);
-                if(alterar(&lista, elemento.nome, elemento.telefone) == -2){
+                if(alterar(&lista, elemento.nome, elemento.telefone) == -2){ //-2 == ELEMENTO_NAO_ENCONTRADO
                     printf("Operacao invalida: contatinho nao encontrado\n");
                 }
             break;
 
-            case '0': //sair do loop e finalizar o programa
-                liberar(&lista);
+            case '0': //sair do loop e finalizar o programa (para isso liberamos a memoria utilizando a funcao liberar())
+                liberar(&lista); //desaloca todos os nos
             break;
         }
     }
