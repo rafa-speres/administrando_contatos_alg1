@@ -12,7 +12,7 @@
 #define ELEMENTO_REPETIDO 0;
 #define SUCESSO 1;
 
-
+//definicoes de tipos:
 typedef char t_chave;
 typedef unsigned int t_telefone;
 
@@ -31,6 +31,7 @@ typedef struct {
 	t_apontador primeiro;
 } t_lista;
 
+//listando as funcoes a serem implementadas no lista.c
 void criar(t_lista *lista);
 t_elemento pesquisar(t_lista *lista, t_chave *chave);
 t_apontador pesquisa_ponteiro(t_lista *lista, t_chave *chave);
